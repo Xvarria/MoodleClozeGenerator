@@ -1,0 +1,16 @@
+textarea.hidden {
+	display:none;
+}
+
+input.hidden {
+	display:none;
+}
+
+tr.hidden {
+	visibility: hidden;
+	display:none;
+}
+
+input.numeric {
+	width : 50px;
+}

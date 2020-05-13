@@ -1,0 +1,147 @@
+Example.Md
+
+Text:
+Single line per question! Match the following cities with the correct state:
+* San Francisco: $SF$
+* Tucson: $TUCSON$
+* Los Angeles: $LA$
+* Phoenix: $PH$
+
+The capital of France is $FRANCIA$
+
+JSON Code:
+<code>
+[
+   {
+      "id":"QUESTION_1",
+      "name":"$FRANCIA$",
+      "type":"SA",
+      "typeDescription":"short answers",
+      "points":"1",
+      "catchAllFeedback":"Wrong answer. The capital of France is Paris, of course.",
+      "optionList":[
+         {
+            "id":"Option_2",
+            "option":"Paris",
+            "percent":"100",
+            "feedback":"Congratulations",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         },
+         {
+            "id":"Option_4",
+            "option":"Marseille",
+            "percent":"50",
+            "feedback":"No, that is the second largest city in France (after Paris).",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         }
+      ]
+   },
+   {
+      "id":"QUESTION_2",
+      "name":"$SF$",
+      "type":"MCV",
+      "typeDescription":"multichoice",
+      "points":"1",
+      "catchAllFeedback":"Wrong answer. The capital of France is Paris, of course.",
+      "optionList":[
+         {
+            "id":"Option_6",
+            "option":"California",
+            "percent":"",
+            "feedback":"OK",
+            "isCorrect":true,
+            "isCorrectDesc":"Y"
+         },
+         {
+            "id":"Option_8",
+            "option":"Arizona",
+            "percent":"",
+            "feedback":"WRONG",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         }
+      ]
+   },
+   {
+      "id":"QUESTION_3",
+      "name":"$TUCSON$",
+      "type":"MCV",
+      "typeDescription":"multichoice",
+      "points":"1",
+      "catchAllFeedback":"Wrong answer. The capital of France is Paris, of course.",
+      "optionList":[
+         {
+            "id":"Option_10",
+            "option":"California",
+            "percent":"",
+            "feedback":"WRONG",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         },
+         {
+            "id":"Option_12",
+            "option":"Arizona",
+            "percent":"100",
+            "feedback":"OK",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         }
+      ]
+   },
+   {
+      "id":"QUESTION_4",
+      "name":"$LA$",
+      "type":"MCV",
+      "typeDescription":"multichoice",
+      "points":"1",
+      "catchAllFeedback":"Wrong answer. The capital of France is Paris, of course.",
+      "optionList":[
+         {
+            "id":"Option_14",
+            "option":"California",
+            "percent":"",
+            "feedback":"OK",
+            "isCorrect":true,
+            "isCorrectDesc":"Y"
+         },
+         {
+            "id":"Option_16",
+            "option":"Arizona",
+            "percent":"",
+            "feedback":"WRONG",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         }
+      ]
+   },
+   {
+      "id":"QUESTION_5",
+      "name":"$PH$",
+      "type":"MCV",
+      "typeDescription":"multichoice",
+      "points":"1",
+      "catchAllFeedback":"Wrong answer. The capital of France is Paris, of course.",
+      "optionList":[
+         {
+            "id":"Option_18",
+            "option":"California",
+            "percent":"0",
+            "feedback":"WRONG",
+            "isCorrect":false,
+            "isCorrectDesc":"N"
+         },
+         {
+            "id":"Option_20",
+            "option":"Arizona",
+            "percent":"",
+            "feedback":"OK",
+            "isCorrect":true,
+            "isCorrectDesc":"Y"
+         }
+      ]
+   }
+]
+</code>
+

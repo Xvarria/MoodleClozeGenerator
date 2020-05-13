@@ -1,0 +1,158 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+	<script language="JavaScript" type="text/javascript" src="./assets/MoodleClozeGenerator.js"></script>
+
+	<link rel="stylesheet" href="./assets/MoodleClozeGenerator.css">	
+</head>
+<body>
+<input id="optionSequence" type="hidden">
+<input id="questionSequence" type="hidden">
+<br>
+Text: use placeholders like this $question1$, then add the questions and options using that question name.
+<br>
+Click in Render Result to covert your text into Embeded Cloze Questions
+<br>
+<br>
+<textarea id="question" style="margin: 0px; width: 861px; height: 193px;">
+
+</textarea>
+<br>
+<br>
+
+<table id="questionTbl">
+	<tr id="questionTblHdr">
+		<th>Name</th>
+		<th>Type</th>
+		<th>Points</th>
+		<th>Options</th>
+		<th>Render</th>
+		<th>Edit</th>
+	</tr>
+	<tr id="questionTblFtr"></tr>
+</table>
+<br>
+<table>
+	<tr>
+		<th>General</th>
+		<th>Options</th>
+	</tr>
+<tr>
+	<td>
+		<table id="questionGen">
+			<tr id="questionGenHeader">
+				<th>Name</th>
+				<th>Type</th>
+				<th>Value</th>
+			</tr>
+			<tr id="trQuestionAdd">
+				<th><input id="name"></th>
+				<th>
+					<select id="type">
+						<option value="SA">short answers</option>
+						<option value="SAC">short answers case</option>
+						<option value="NM">numerical answers</option>
+						<option value="MCV">multichoice</option>
+						<option value="MCH">multichoice vertical</option>
+						<option value="MR">multiple choice multiresponse vertical</option>
+						<option value="MRH">multiple choice multiresponse horizontal</option>
+					</select>
+				</th>
+				<th><input id="points" class="numeric" type="number" min="1" max="100" pattern="\d*" maxlength="3"/></th>
+			</tr>
+			<tr id="trQuestionAdd2">
+				<th>Catch All Feedback:</th>
+				<th colspan="2" align="left">
+					<input id="catchAllFeedback"/>
+				</th>
+			</tr>
+			<tr id="trQuestionAddBtn">
+				<td colspan="4" align="center">
+					<input id="addQuestion" type="button" value="add Question" onclick="javascript:addQuestion()"/>
+				</td>
+			</tr>
+			<tr id="trQuestionEdit" class="hidden">
+				<th><input id="nameEdit"></th>
+				<th>
+					<select id="typeEdit">
+						<option value="SA">short answers</option>
+						<option value="SAC">short answers case</option>
+						<option value="NM">numerical answers</option>
+						<option value="MCV">multichoice</option>
+						<option value="MCH">multichoice vertical</option>
+						<option value="MR">multiple choice multiresponse vertical</option>
+						<option value="MRH">multiple choice multiresponse horizontal</option>
+					</select>
+				</th>
+				<th><input id="pointsEdit" class="numeric" type="number" min="1" max="100" pattern="\d*" maxlength="3"/></th>
+			</tr>
+			<tr id="trQuestionEdit2" class="hidden">
+				<th>Catch All Feedback:</th>
+				<th colspan="2" align="left">
+					<input id="catchAllFeedbackEdit"/>
+				</th>
+			</tr>
+			<tr id="trQuestionEditBtn" class="hidden">
+				<td colspan="4" align="center">
+					<input id="questionId" type="hidden"/>
+					<input id="saveQuestion" type="button" value="Save Question" onclick="javascript:saveQuestion()"/>
+					<input id="cancelQuestion" type="button" value="Cancel" onclick="javascript:cancelEditQuestion()"/>
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table id="options">
+			<tr id="optionHeader">
+				<th>Option</th>
+				<th>Is correct</th>
+				<th> % </th>
+				<th> Feedback</th>
+				<th></th>
+			</tr>
+			<tr id="trOptionAdd">
+				<div id="divOptionAdd">
+					<th><input id="option"/></th>
+					<th><input id="isCorrect" type="checkbox"/></th>
+					<th><input id="percent" class="numeric" type="number" min="0" max="100" pattern="\d*" maxlength="3"/></th>
+					<th><input id="feedback"/></th>
+					<th><input id="add" type="button" value="add Option" onclick="javascript:addOption()"/></th>
+				</div>
+				<div id="divOptionAdd">
+				
+				</div>
+			</tr>
+			<tr id="trOptionEdit" class="hidden">
+				<th><input id="optionEdit"/></th>
+				<th><input id="isCorrectEdit" type="checkbox"/></th>
+				<th><input id="percentEdit" class="numeric" type="number" min="0" max="100" pattern="\d*" maxlength="3"/></th>
+				<th><input id="feedbackEdit"/></th>
+				<th>
+					<input id="optionId" type="hidden"/>
+					<input id="optionBeforeId" type="hidden"/>
+					<input id="edit" type="button" value="save Option" onclick="javascript:saveOption()"/>
+					<input id="cancel" type="button" value="cancel" onclick="javascript:cancelEdit()"/>
+				</th>
+			</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+
+</tr>
+</table>
+
+<textarea id="optionJson" class="hidden" style="margin: 0px; width: 861px; height: 25px;"></textarea>
+<input id="toogle" type="button" onclick="toogleTextArea()" value="Toogle Code View">
+<input id="renderTbl" class="hidden" type="button" onclick="renderQuestionTable()" value="Reload Question Table">
+<input id="renderBtn" type="button" onclick="renderResponse()" value="Render Result"><br>
+<textarea id="questionJson"  class="hidden"  style="margin: 0px; width: 861px; height: 150px;"></textarea>
+
+<textarea id="output" style="margin: 0px; width: 861px; height: 193px;">
+
+</textarea>
+</body>
+</html>
